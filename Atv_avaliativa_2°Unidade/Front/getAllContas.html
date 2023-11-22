@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <ul>
+            <li> <a href="createConta.html">Criar Conta</a></li>
+            <li><a href="updateConta.html">Alterar Conta</a></li>
+            <li><a href="getConta.html">Pegar uma Conta</a></li>
+            <li><a href="getAllContas.html">Listar Contas</a></li>
+            <li><a href="deleteConta.html">Excluir Conta</a></li>
+        </ul>
+    </header>
+
+    <div class="cadastroContainer">
+
+        <h1>Liste todas as Contas!</h1>
+
+
+        <button onclick="GetAllContas()" style="margin: auto;">Listar</button>
+    </div>
+
+    <div id="tabelaContainer">
+
+    </div>
+    
+    <script src="inputValidate.js"></script>
+    <script src="apiConect.js"></script>
+   
+</body>
+</html>

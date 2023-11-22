@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando conta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <ul>
+            <li> <a href="createConta.html">Criar Conta</a></li>
+            <li><a href="updateConta.html">Alterar Conta</a></li>
+            <li><a href="getConta.html">Pegar uma Conta</a></li>
+            <li><a href="getAllContas.html">Listar Contas</a></li>
+            <li><a href="deleteConta.html">Excluir Conta</a></li>
+        </ul>
+    </header>
+
+    <div class="cadastroContainer">
+
+        <h1>Altere a conta!</h1>
+
+        <form id="formUpdateConta">
+            
+
+            <input type="number" id="id" placeholder="Id da conta" required>
+
+            <input type="password" id="senhaAtual" placeholder="Insira a senha atual" required>
+
+            <input type="email" id="email" required placeholder="Email" >
+            
+            <input type="text" id="nickname" required placeholder="Nickname">
+        
+            <input type="password" id="senha" required placeholder="Senha">
+            
+            <input type="password" id="confirmaSenha" required placeholder="Confirme Senha">
+
+            <label for="dataNasc">Data de Nascimento: </label>
+            <input type="date" id="dataNasc" required>
+
+            <label for="idioma">Idioma: </label>
+            <select id="idioma" required>
+                <option value="" selected>Selecione Idioma</option>
+                <option value="Português">Português</option>
+                <option value="English">English</option>
+                <option value="Spanish">Espanhol</option>
+            </select>
+
+              <button type="submit">Atualizar Conta</button>
+        </form>
+    
+    </div>
+
+    <script src="inputValidate.js"></script>
+    <script src="apiConect.js"></script>
+    <script src="updateConta.js"></script>
+</body>
+</html>
