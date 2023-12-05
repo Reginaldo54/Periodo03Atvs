@@ -1,1 +1,0 @@
-Atividade individual de mobile usando: App React Native + API + Geolocalização + Mapa 
