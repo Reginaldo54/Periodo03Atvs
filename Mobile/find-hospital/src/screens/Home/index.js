@@ -18,12 +18,24 @@ export default function Home() {
 
     async function handleBuscar() {
         try {
-            const { status, data } = await api.get(`${hospital}&resource_id=54232db8-ed15-4f1f-90b0-2b5a20eef4cf`);
+            const { status, data } = await api.get();
 
             if (status != 200 || data.erro) {
                 Alert.alert('Buscar', 'Digite um Hospital válido.');
             } else {
-                setAddress(data);
+                
+                
+                let array = data.result.records;
+                for(const element of array)
+                {
+                    if(element.nome_oficial.includes(hospital.toLowerCase()))
+                    {
+                        console.log(element);
+                        setAddress(element);
+                    }
+                }
+                
+                
             }
 
         } catch (error) {
@@ -53,7 +65,7 @@ export default function Home() {
             >
                 {!address &&
                     <Input
-                        keyboardType="numeric"
+                        keyboardType="string"
                         maxLength={8}
                         onChangeText={setHospital}
                         onSubmitEditing={handleBuscar}
@@ -74,13 +86,11 @@ export default function Home() {
 
             {address &&
                 <AddressArea>
-                    <Text>Nome Oficial: {hospital}</Text>
-                    <Text>Descrição:{address.logradouro}</Text>
-                    <Text>Especialidade: {address.bairro}</Text>
-                    <Text>Cidade: {address.localidade}</Text>
-                    <Text>IBGE: {address.ibge}</Text>
-                    <Text>DDD: {address.ddd}</Text>
-                    <Text>UF: {address.uf}</Text>
+                    <Text>Nome Oficial: {address.nome_oficial}</Text>
+                    <Text>Endereço:{address.endereço}</Text>
+                    <Text>Especialidade: {address.especialidade}</Text>
+                    <Text>Horário de antedimento: {address.horario}</Text>
+                    <Text>Tipo de serviço: {address.tipo_servico}</Text>
                 </AddressArea>
             }
         </Container>

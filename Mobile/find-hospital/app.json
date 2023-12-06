@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "busca-cep",
-    "slug": "busca-cep",
+    "name": "busca-hospital",
+    "slug": "busca-hospital",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
